@@ -1,0 +1,25 @@
+def main():
+    number = int(input("Enter a number between 1-100: "))
+    if number < 1:
+        print("Please pick a number between 1-100")
+        main()
+    elif number > 100:
+        print("Please pick a number between 1-100")
+        main()
+    guesser(number)
+
+
+def guesser(number):
+    low = 1
+    high = 100
+    guess = 0
+    while guess != number:
+        guess = random.randint(low, high)
+        info = input("Is {:2d} low or high? ".format(guess))
+        info = info.lower
+        if info == "high":
+            high =+ guess
+        elif info == "low":
+            low =+ guess 
+        elif info == "yes":
+            print("Yay")
